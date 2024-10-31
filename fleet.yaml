@@ -5,7 +5,7 @@ metadata:
   namespace: fleet-local # Or fleet-default if you’re using that namespace
 spec:
   repo: "https://github.com/bsolus/beevo-devops-docker-prerender"
-  branch: main # Specify the branch to track
+  branch: master # Specify the branch to track
   paths:
     - . # Root directory of the repository
   ignore:
