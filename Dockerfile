@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:16-alpine
 
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
@@ -17,7 +17,7 @@ COPY ./server.js .
 # install npm packages
 RUN npm install --no-package-lock
 
-EXPOSE 3000
+EXPOSE 80
 
 ENTRYPOINT ["tini", "--"]
 CMD ["node", "server.js"]

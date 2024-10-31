@@ -1,49 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-node
-  namespace: beevo-saas-test-performance
+  name: beevo-prerender
+  namespace: beevo-prerender
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: test-node
+      app: beevo-prerender
   template:
     metadata:
       labels:
-        app: test-node
+        app: beevo-prerender
     spec:
       containers:
         - name: node
-          image: apoca/test-node-app:1.1.0
+          image: dfernandesbsolus/beevo-devops-docker-prerender-prerender:latest
           ports:
             - containerPort: 80
-          command: ["node", "app.js"]
-          env:
-            - name: DB_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: host
-            - name: DB_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: dbname
-            - name: DB_USER
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: username
-            - name: DB_PASS
-              valueFrom:
-                secretKeyRef:
-                  name: db-credentials
-                  key: password
+          command: ["node", "server.js"]
           resources:
             requests:
               memory: "256Mi"
-              cpu: "100m"
+              cpu: "500m"
             limits:
               memory: "512Mi"
-              cpu: "200m"
+              cpu: "1000m"
