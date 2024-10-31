@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prerender-service
+  namespace: beevo-prerender
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: beevo-prerender
+  type: ClusterIP

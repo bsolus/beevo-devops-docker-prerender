@@ -1,0 +1,14 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: beevo-prerender
+  namespace: fleet-local # Or fleet-default if you’re using that namespace
+spec:
+  repo: "https://github.com/bsolus/beevo-saas-test-performance"
+  branch: main # Specify the branch to track
+  paths:
+    - . # Root directory of the repository
+  ignore:
+    - "node-build/**" # Exclude this folder
+  defaultNamespace: beevo-prerender # This will ensure the namespace is created automatically
+  # You can also add more fields for cluster selectors or custom targets
