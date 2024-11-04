@@ -2,7 +2,7 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
   name: beevo-prerender
-  namespace: fleet-local # Or fleet-default if you’re using that namespace
+  namespace: beevo-prerender # Or fleet-default if you’re using that namespace
 spec:
   repo: "https://github.com/bsolus/beevo-devops-docker-prerender"
   branch: master # Specify the branch to track
