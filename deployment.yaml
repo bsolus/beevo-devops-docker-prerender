@@ -4,7 +4,7 @@ metadata:
   name: beevo-prerender
   namespace: beevo-prerender
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: beevo-prerender
